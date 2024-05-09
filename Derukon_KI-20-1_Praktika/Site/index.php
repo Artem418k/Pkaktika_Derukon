@@ -14,7 +14,6 @@ include 'layouts/navbar.php'; ?>
                 <input type="password" class="form-control" name="pass" id="pass" placeholder="Введіть пароль"><br>
                 <button class="btn btn-success" type="submit">Авторизуватися</button>
                 </form>
-                </form>
             </div>
             <?php else: ?>
         <meta http-equiv="refresh" content="0;/kabinet.php">
