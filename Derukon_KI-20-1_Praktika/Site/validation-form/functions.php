@@ -22,9 +22,9 @@
     return true;
   }
   
-  function make_upload($file){   
+function make_upload($file){   
     // формируем уникальное имя картинки: случайное число и name
-    $name = mt_rand(0, 10000) . $file['name'];
+    $name = uniqid() . '_' . $file['name']; // добавляем уникальный идентификатор перед именем файла
     copy($file['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/photo/' . $name);
 
     include 'database.php';
@@ -37,5 +37,6 @@
 
     $mysql->query("UPDATE `users` SET `avatar` = '/photo/$name' WHERE `id`= '$id_user'");
     $mysql->close();
+}ysql->close();
   }
 ?>
